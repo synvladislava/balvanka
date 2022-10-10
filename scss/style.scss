@@ -1,0 +1,367 @@
+@import "vars";
+@import "fonts";
+@import "reset";
+@import "libs";
+@import "global";
+
+.header {
+  background: rgb(55, 143, 143);
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  padding: 20px 0;
+
+  &__flexbox {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__list {
+    display: flex;
+  }
+
+  &__item {
+    @include adaptiv-value("margin-right", 50, 8, 1);
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    @include adaptiv-font(20, 13);
+    transition: 1s;
+  }
+
+  &__link:hover {
+    display: inline-block;
+    transition: 1s;
+    transform: scale(-1, 1);
+  }
+
+  &__menu-burger {
+    display: none;
+  }
+}
+
+.logo {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+  background: rgb(29, 103, 102);
+}
+
+.first {
+  background: rgb(172, 206, 186);
+  @include adaptiv-value("padding-top", 80, 35, 1);
+  @include adaptiv-value("padding-bottom", 80, 35, 1);
+  margin-top: 90px;
+
+  &__container {
+    width: 900px / 1200px * 100%;
+    margin: 0 auto;
+  }
+
+  &__flexbox {
+    display: flex;
+    align-items: center;
+  }
+
+  &__textblock {
+    flex: 0 0 50%;
+    @include adaptiv-value("margin-right", 50, 8, 1);
+  }
+
+  &__subtitle {
+    @include adaptiv-font(29, 23);
+    @include adaptiv-value("line-height", 30, 20, 1);
+    margin: 0 0 5px;
+  }
+
+  &__title {
+    @include adaptiv-font(50, 35);
+    @include adaptiv-value("line-height", 60, 45, 1);
+    font-weight: 700;
+    color: rgb(217, 252, 221);
+    margin: 0 0 10px;
+  }
+
+  &__text {
+    @include adaptiv-font(18, 16);
+    @include adaptiv-value("line-height", 26, 23, 1);
+  }
+
+  &__image {
+    max-width: 100%;
+    min-width: 298px;
+  }
+}
+
+.second {
+  background: rgb(94, 139, 113);
+  @include adaptiv-value("padding-top", 80, 35, 1);
+  @include adaptiv-value("padding-bottom", 80, 35, 1);
+
+  &__title {
+    text-align: center;
+    @include adaptiv-value("margin-bottom", 50, 20, 1);
+  }
+
+  &__flexbox {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__item {
+    flex: 0 1 50%;
+    padding-bottom: 30px;
+  }
+
+  &__item_3,
+  &__item_4 {
+    padding-bottom: 0;
+  }
+}
+
+.title {
+  @include adaptiv-font(35, 20);
+  @include adaptiv-value("line-height", 30, 20, 1);
+  font-weight: 500;
+  color: rgb(217, 252, 221);
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  &__image {
+    flex: 0 0 240px;
+  }
+
+  &__textblock {
+    flex: 1 1 auto;
+    min-width: 200px;
+    @include adaptiv-value("margin-left", 15, 8, 1);
+    @include adaptiv-value("margin-right", 15, 8, 1);
+  }
+  &__title {
+    @include adaptiv-font(19, 15);
+    @include adaptiv-value("line-height", 20, 17, 1);
+    margin: 0 0 5px;
+  }
+  &__text {
+    @include adaptiv-font(15, 12);
+    @include adaptiv-value("line-height", 18, 15, 1);
+  }
+}
+
+.footer {
+  background: rgb(40, 104, 104);
+  padding: 20px 0;
+  &__container {
+    max-width: 900px;
+    padding: 0 15px;
+    margin: 0 auto;
+  }
+
+  &__flexbox {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0 -25px;
+  }
+
+  &__column {
+    flex: 0 0 33.33%;
+    padding: 0 25px;
+  }
+
+  &__menu {
+    display: flex;
+  }
+
+  &__list_1 {
+    margin: 0 50px 0 0;
+  }
+
+  &__item {
+    margin: 0 0 15px;
+  }
+
+  &__item:last-child {
+    margin: 0;
+  }
+
+  &__link {
+    display: inline-block;
+    min-width: 94px;
+    @include adaptiv-font(14, 12);
+    transition: 1s;
+  }
+
+  &__link:hover {
+    display: inline-block;
+    transition: 1s;
+    transform: scale(-1, 1);
+  }
+
+  &__form-label {
+    @include adaptiv-font(20, 15);
+    margin: 0 0 10px;
+  }
+
+  &__input {
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    text-indent: 10px;
+    margin: 0 15px 0 0;
+  }
+
+  &__button {
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background: rgb(101, 160, 160);
+    color: #fff;
+    transition: 0.3s;
+  }
+
+  &__button:hover {
+    background: rgb(149, 196, 196);
+    transition: 0.3s;
+  }
+
+  &__button:active {
+    background: rgb(100, 170, 170);
+    transition: 0.1s;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+  }
+
+  &__content p {
+    @include adaptiv-font(14, 12);
+    margin: 0 15px 0;
+  }
+}
+
+@media (max-width: 961px) {
+  .second {
+    &__item {
+      flex: 0 1 100%;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    &__item_3 {
+      padding-bottom: 30px;
+    }
+  }
+
+  .footer {
+    &__column {
+      flex: none;
+    }
+  }
+}
+
+@media (max-width: 876px) {
+  .footer {
+    &__flexbox {
+      justify-content: space-around;
+    }
+
+    &__content {
+      margin: 20px 0 0 0;
+    }
+  }
+}
+
+@media (max-width: 734px) {
+  .header {
+    &__list {
+      display: none;
+    }
+    &__menu-burger {
+      display: block;
+      background: url(../img/header/menu-burger.svg) no-repeat;
+      width: 27px;
+      height: 20px;
+    }
+  }
+  .first {
+    &__flexbox {
+      flex-wrap: wrap;
+    }
+    &__textblock {
+      flex: 0 0 100%;
+      text-align: center;
+      margin-right: 0;
+      @include adaptiv-value("margin-bottom", 50, 20, 1);
+    }
+    &__image {
+      display: block;
+      max-width: 298 / 500 * 100%;
+      min-width: 220px;
+      margin: 0 auto;
+    }
+  }
+}
+
+@media (max-width: 567px) {
+  .footer {
+    &__flexbox {
+      margin: 0;
+    }
+    &__column {
+      padding: 15px;
+    }
+    &__form-label {
+      margin-top: 30px;
+    }
+  }
+}
+
+@media (max-width: 562px) {
+  .second {
+    &__flexbox {
+      @include adaptiv-value("margin-left", 66, 24, 1);
+      @include adaptiv-value("margin-right", 66, 24, 1);
+    }
+  }
+  .item {
+    flex-wrap: wrap;
+    &__textblock {
+      margin: 0;
+    }
+    &__image {
+      margin: 0 auto 20px;
+    }
+    &__title,
+    &__text {
+      text-align: center;
+    }
+  }
+}
+
+@media (max-width: 320px) {
+  .first {
+    &__container {
+      width: inherit;
+    }
+  }
+  .second {
+    &__flexbox {
+      margin: 0;
+    }
+  }
+}
